@@ -41,3 +41,40 @@ print(max_val_list)
 #also summation 
 sum_val=sum([1, 2, 3, 4, 5])
 print(sum_val)
+
+
+
+#variable -------
+#must start with a letter or underscore character
+#cannot start with a number
+#alphabetical characters and underscores
+#variable names are case sensitive
+
+#valid variable names
+firstname
+lastname
+age
+country
+city
+first_name
+last_name
+capital_city
+_if # if we want to use reserved word as a variable
+year_2021
+year2021
+current_year_2021
+birth_year
+num1
+num2
+
+#variable declaration
+first_name = "Jimmy" #or you can use single quotations it doesn't matter
+age = 25
+is_tall=True #boolean
+skills= ["HTML", "CSS", 'JS', 'Python'] #this is the list/array
+person_info = {"firstname": 'Jimmy', 
+            'lastname': 'Luong', 
+            'country': 'Canada', 
+            'city': 'Winnipeg'} #this is a dictionary, or a hashmap
+
+
