@@ -1,5 +1,7 @@
 #day 3 - operators
 
+import math
+
 #such as True and False
 #must be capitalized
 
@@ -46,3 +48,54 @@ print('a / b = ', division)
 print('a % b = ', remainder)
 print('a // b = ', floor_division)
 print('a ** b = ', exponential)
+
+
+#calculate area of circle
+radius = 10
+pi = math.pi
+area_circle = pi * radius**2
+print('The area of the circle is:',area_circle, 'units^2')
+
+#calculate the area of the rectangle
+length = 10
+width = 5
+print('The area of the rectangle is:',length*width, 'units')
+
+#calcluate the weight of the object
+mass = 75
+gravity = 9.81
+weight = mass*gravity
+print('The weight of this object is:', weight, 'N') #prints the weight and the unit beside
+
+print(3 > 2)     # True, because 3 is greater than 2
+print(3 >= 2)    # True, because 3 is greater than 2
+print(3 < 2)     # False,  because 3 is greater than 2
+print(2 < 3)     # True, because 2 is less than 3
+print(2 <= 3)    # True, because 2 is less than 3
+print(3 == 2)    # False, because 3 is not equal to 2
+print(3 != 2)    # True, because 3 is not equal to 2
+print(len('mango') == len('avocado'))  # False
+print(len('mango') != len('avocado'))  # True
+print(len('mango') < len('avocado'))   # True
+print(len('milk') != len('meat'))      # False
+print(len('milk') == len('meat'))      # True
+print(len('tomato') == len('potato'))  # True
+print(len('python') > len('dragon'))   # False
+
+
+# Comparing something gives either a True or False
+
+print('True == True: ', True == True)
+print('True == False: ', True == False)
+print('False == False:', False == False)
+
+
+#other comparsion types such as "is, is not, in, not in "
+
+print('1 is 2', 1 is 2) #should be False
+print('1 is not 2', 1 is not 2) #should be True it also works with strings
+
+print('L in Lebron', 'L' in 'Lebron') #True
+print('J not in Lebron', 'J' in 'Lebron') #False
+
+
