@@ -23,4 +23,6 @@ print(type({"name": "Lebron"})) #this is a dictionary or hashmap
 
 print(type({9.8, 1.2, 3})) #this is a set, which is a data structure that stores a collection of items (unordered, mutable and unique and allow for duplicates)
 #mutable objects vs 
-hello world
+
+lebron james is the goat
+
