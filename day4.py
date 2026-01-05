@@ -13,7 +13,7 @@ multi_line_string = '''This is my string'''
 print(multi_line_string) #you can also do the same with double quotes
 
 
-#string concatenation 
+#string concatenation (literally just add the strings together)
 firstname='Jimmy'
 lastname='Luong'
 space=' '
@@ -92,5 +92,25 @@ print(string.replace('world', 'there'))
 #to find the if the string is all lower case or uppercase
 string = 'hello'
 print(string.islower()) #returns True, else it returns false
+
+#can also use a list/array of strings and join them together.
+web_tech = ['HTML', 'CSS', 'JavaScript', 'React']
+result = ' '.join(web_tech)
+print(result) # 'HTML CSS JavaScript React'
+
+
+#exercises
+#Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'.
+
+string1 = 'Thirty', 'Days', 'Of', 'Python'
+string2= ' '.join(string1)
+print(string2)
+
+#Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'.
+string1 = 'Coding', 'For', "All"
+#need to remove the spaces first
+string2 = ' '.join(string1)
+print(string2)
+
 
 
