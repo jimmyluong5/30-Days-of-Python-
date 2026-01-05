@@ -42,3 +42,55 @@ lastname='Luong'
 formatted_string = 'I am {} {}'.format(firstname, lastname)
 print(formatted_string)
 
+a = 4
+b = 3
+
+print('{} + {} = {}'. format(a, b, a+b))
+
+#printing strings by indices
+string = 'Lebron'
+print(string[0])
+print(string[1])
+
+#slicing strings
+string = 'Lebron'
+print(string[0:3]) #this prints the first 3 letters from index 0 to index 2
+#excluding 3
+print(string[2:]) #this prints from index 2 to the end
+print(string[:4]) #this prints from the start to index 3
+
+#reversing a string
+print(string[: :-1])#prints the string backwards, the colon (:)
+#means the whole string and the -1 means step backwards by 1 starting
+#from the end of the string
+
+#using string commands in the python library
+#find() this finds an occurence of a substring in another string and returns the index
+#else it returns -1
+
+string = 'Hello world'
+print(string.find('o')) #this returns 4, the first index where 'o' is found
+
+print(string.find('z')) #this returns -1 since 'z' is not found in the string
+
+#upper() this converts a string to uppercase
+lebron = 'hello'
+print(lebron.upper())
+
+#lower() this converts a string to lowercase
+string = 'HELLO'   
+print(string.lower())
+
+#strip() this removes any whitespace from the beginning or end of a string
+string = '   hello world   '
+print(string.strip())
+
+#replace() this replaces a substring with another substring
+string = 'hello world'
+print(string.replace('world', 'there'))
+
+#to find the if the string is all lower case or uppercase
+string = 'hello'
+print(string.islower()) #returns True, else it returns false
+
+
