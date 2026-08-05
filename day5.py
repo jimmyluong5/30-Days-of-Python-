@@ -262,5 +262,33 @@ it_companies.insert(0, 'Netflix') #adds it to the start of the list
 it_companies.append('Acer')
 print(it_companies)
 
+it_companies.append('#')
+print(it_companies)
 
+#check if a certain company exists in the list
+does_exist = 'Microsoft' in it_companies
+print(does_exist)
 
+#sort the list
+it_companies.sort()
+print(it_companies) #alphabetical order
+
+#reverse the list
+it_companies.reverse()
+print(it_companies)
+
+#slice out the first 3 elements
+del it_companies[0:3]
+print(it_companies)
+
+#slice the last 3 elements
+del it_companies[3:]
+print(it_companies)
+
+#pop index, remove is specific item
+it_companies.pop(0)
+print(it_companies)
+
+#remove the middle it company
+it_companies.pop(int(first_index+(len(it_companies)-1)/2))
+print(it_companies)
