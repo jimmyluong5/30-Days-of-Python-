@@ -115,3 +115,17 @@ print(fruits)
 
 fruits.append('Lebron')
 print(fruits)
+
+
+#we can insert an item into a specific index in the array, using array_name.insert(index ,item)
+
+fruits.insert(1, 'Curry')
+print(fruits)
+
+#remove item from a list at a specific index, using array_name.remove(index, item) or remove at the end array_name.pop(item)
+
+fruits.remove(1, 'Curry')
+print(fruits)
+
+fruits.pop(1, 'Lebron')
+print(fruits)
