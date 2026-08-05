@@ -25,3 +25,5 @@ print(tuples)
 list = ['lebron', 'curry', 'booker']
 list = tuple(list)
 print(list)
+
+#everything else is the same
