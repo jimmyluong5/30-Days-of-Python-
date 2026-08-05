@@ -212,6 +212,55 @@ print(ages)
 sorted_ages = sorted(ages)
 print(sorted_ages)
 
+#just do reverse=True do reverse the list, or do descending order
 ages.sort(reverse=True)
 print(ages) #sort in descending order
+
+
+#worksheet
+
+#declare empty list
+arr = []
+
+#declare a list with more than 5 items
+arr = [1,2,3,4,5,6,7]
+
+#find the length of the list
+print(len(arr))
+
+#get the first, middle and last item of the list
+print(arr[0])
+first_index = 0
+middle_index= int(first_index+ (len(arr)-1)/2)
+last_index = len(arr)-1
+print(middle_index)
+print(arr[middle_index])
+
+#declare a new list mixed_data_types
+
+mixed_data_types = ['Jimmy', 20, 'Single', 'Male']
+
+#6.
+it_companies = ['Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon']
+print(it_companies)
+
+#8. num of companies
+print(len(it_companies))
+
+#9. first, middle and last
+print(it_companies[0])
+print(it_companies[int(first_index+(len(it_companies)-1)/2)])
+last_index = len(it_companies)-1
+print(it_companies[last_index])
+
+#remove the first element
+it_companies.pop(0)
+print(it_companies)
+
+#11. add a new company to the list
+it_companies.insert(0, 'Netflix') #adds it to the start of the list
+it_companies.append('Acer')
+print(it_companies)
+
+
 
