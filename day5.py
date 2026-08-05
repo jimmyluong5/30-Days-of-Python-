@@ -122,10 +122,96 @@ print(fruits)
 fruits.insert(1, 'Curry')
 print(fruits)
 
-#remove item from a list at a specific index, using array_name.remove(index, item) or remove at the end array_name.pop(item)
+#remove item from a list at a specific index, using array_name.remove(item) 
+# #or remove at the end array_name.pop(index)
 
-fruits.remove(1, 'Curry')
+fruits.remove('Curry')
 print(fruits)
 
-fruits.pop(1, 'Lebron')
+fruits.pop(1)
 print(fruits)
+
+#removing specific items or can just use pop
+# syntax
+lst = ['item1', 'item2','item3']
+del lst[1] # only a single item
+print(lst)
+del lst[0:1]   # to delete the list completely
+
+fruits = ['banana', 'orange', 'mango', 'lemon', 'kiwi', 'lime']
+#del fruits[0]
+#print(fruits)       # ['orange', 'mango', 'lemon', 'kiwi', 'lime']
+#del fruits[1]
+#print(fruits)       # ['orange', 'lemon', 'kiwi', 'lime']
+#del fruits[1:3]     # this deletes items between given indexes, so it does not delete the item with index 3!
+print(fruits)       # ['orange', 'lime']
+#del fruits
+#print(fruits)       # This should give: NameError: name 'fruits' is not defined
+
+
+#clearing list
+arr = ['item1', 'item2']
+arr.clear()
+print(arr)
+
+
+#copying a list
+arr1 = fruits.copy()
+print(arr1)
+
+
+#joining lists together
+
+east_players = ['Lebron, Maxey, Embiid, Brown']
+west_players = ['Curry, Wemby, Shai, Booker']
+
+nba_players = east_players + west_players
+print(nba_players )
+
+#or use the extend method which can place the items of 1 list and the back of another
+#list1.extend(list2 this list will append at the back of list1)
+west_players.extend(east_players)
+print(west_players) #should place the east_players behind the west
+
+num1 = [0, 1, 2, 3]
+num2= [4, 5, 6]
+num1.extend(num2)
+print('Numbers:', num1) # Numbers: [0, 1, 2, 3, 4, 5, 6]
+negative_numbers = [-5,-4,-3,-2,-1]
+positive_numbers = [1, 2, 3,4,5]
+zero = [0]
+
+negative_numbers.extend(zero)
+negative_numbers.extend(positive_numbers)
+print('Integers:', negative_numbers) # Integers: [-5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5]
+fruits = ['banana', 'orange', 'mango', 'lemon']
+vegetables = ['Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
+fruits.extend(vegetables)
+print('Fruits and vegetables:', fruits ) # Fruits and vegetables: ['banana', 'orange', 'mango', 'lemon', 'Tomato', 'Potato', 'Cabbage', 'Onion', 'Carrot']
+
+
+#counting items in a list, returns the number of times an item appears in the list. 
+print(fruits.count('banana'))
+
+ages = [22, 24, 19, 50, 21, 25, 21, 21, 21]
+print(ages.count(21))
+
+#finding index of an item
+#array_name.index(item)
+print(ages.index(50))
+
+#reversing a list
+ages.reverse()
+print(ages)
+
+#sorting a list
+ages.sort() #ascending order
+print(ages)
+
+#can also use sorted() function to sort a list
+sorted_ages = sorted(ages)
+print(sorted_ages)
+
+ages.sort(reverse=True)
+print(ages) #sort in descending order
+
