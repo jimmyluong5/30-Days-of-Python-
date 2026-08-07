@@ -13,7 +13,7 @@
 arr = [] #empty list
 
 #or 
-arr1 = ()
+arr1 = list()
 
 #or 
 empty_list = list()
