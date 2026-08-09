@@ -1,5 +1,4 @@
 #loops
-
 #while loops, while a condition is going on do the following code
 i = 0
 #while i < 10:
@@ -110,7 +109,96 @@ for i in range(0, 5):
     print(i)
     
 print('\n')
-for i in range(3): #starts at 0 and goes to 3 exclusive
+for i in range(3): #starts at 0 and goes to 3 exclusive (not including 3)
+    print(i)
+
+
+#nested loops
+#for x in y:
+ #   for t in x:
+#        print(t)
+
+person = {
+    'first_name': 'Asabeneh',
+    'last_name': 'Yetayeh',
+    'age': 250,
+    'country': 'Finland',
+    'is_marred': True,
+    'skills': ['JavaScript', 'React', 'Node', 'MongoDB', 'Python'],
+    'address': {'street': 'Space street','zipcode': '02210'}
+}
+
+#loop through the list of skills
+#for i in person:
+    #if i == 'skills':
+       # for j in person['skills']:
+           # print(j)
+
+#this is faster
+for i in person['skills']:
+    print(i)
+    
+
+#exercises
+
+for i in range(0,8):
+    print('#' * i)
+
+i = 0
+while i < 8:
+    print('#' * i)
+    i=i+1
+
+
+for i in range(10, 0, -1):
+    print(i, '\n')
+
+for i in range (1):
+    for j in range(0, 9):
+        print('#' * 8)
+
+    
+for i in range(0, 11):
+    print(i, 'x', i, '=', i**2)
+
+#print the following using loops
+
+lst=['Python', 'Numpy','Pandas','Django', 'Flask']
+for i in lst:
+    print(i)
+
+#even numbers
+for i in range(0,101):
+    if (i % 2 ==0):
+        print(i)
+
+#odd numbers
+for i in range(0, 101):
+    if (i % 2 !=0):
+        print(i)
+    
+
+#sum all numbers 
+sum = 0
+for i in range(0, 101):
+    sum = sum+i
+
+print('The sum of all numbers from 0-100 is:',sum)
+
+sum_even, sum_odd = 0, 0
+for i in range(0, 101):
+    if (i % 2==0):
+        sum_even = sum_even+i
+    else:
+        sum_odd = sum_odd+i
+
+print('The sum of even numbers is:', sum_even)
+print('The sum of odd numbers is:', sum_odd)
+
+
+lst = ['banana', 'orange', 'mango', 'lemon'] 
+
+for i in range(len(lst)-1, -1, -1):
     print(i)
 
 
