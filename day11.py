@@ -190,24 +190,20 @@ print_list([1,2,3,4])
 #reverse list
 def reverse_list(lst):
     i = 0
-    j = len(lst)-1
+    j = len(lst) - 1
 
     while i < j:
-        #swap the elements
-        lst[i] = lst[j]
-        lst[j] = lst[i]
-        i +=1
-        j -=1
+        # swap the elements simultaneously
+        lst[i], lst[j] = lst[j], lst[i]
+        i += 1
+        j -= 1
     return lst
 
-print(reverse_list([1,2,3,4]))
+print(reverse_list([1, 2, 3, 4]))
 
 def capitalize_list_items(lst):
-    #just need to capitalize the items, then return the new list
-    #use strings for this
-    for word in lst:
-        word = word.upper()
-    return lst
+    # capitalize items and return the new list
+    return [word.upper() for word in lst]
 
 print(capitalize_list_items(['lebron']))
 
@@ -217,11 +213,12 @@ def add_item(lst, item):
 
 print(add_item(['lebron'], 'James'))
 
-def remove_item(lst):
-    lst.pop(1)
+def remove_item(lst, item):
+    if item in lst:
+        lst.remove(item)
     return lst
 
-print(remove_item(['Lebron', 'James']))
+print(remove_item(['Lebron', 'James'], 'James'))
 
 def sum_of_numbers(n):
     sum = 0
