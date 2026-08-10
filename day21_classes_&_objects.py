@@ -147,4 +147,71 @@ print(p2.person_info())
 print(p1.skills)
 print(p2.skills)
 
+#inheritance we can reuse the parent code. 
+#like a child can inherit attributes and methods from a parent, a class can inherit from another class
+#we create a new class that inherits from the Person class
+#like Parent -> Child, this Child node inherits all of the same attributes and methods from the parent
+# syntax -> class ChildClassName(ParentClassName):
+    #code
 
+class Student(Person): #this Student class will now include all of the methods and attributes
+    pass 
+
+s1 = Student('Eyob', 'Yetayeh', 30, 'Finland', 'Helsinki')
+s2 = Student('Lidiya', 'Teklemariam', 28, 'Finland', 'Espoo')
+
+print(s1.person_info())
+print(s2.person_info())
+
+s1.add_skill('programming')
+s1.add_skill('react')
+s2.add_skill('JavaScript')
+s2.add_skill('Angular')
+
+print(s1.skills)
+print(s2.skills)
+
+#exercise
+class PersonAccount:
+    def __init__(self, firstname, lastname):
+        self.firstname = firstname
+        self.lastname = lastname
+        self.income = {}
+        self.expenses = {}
+
+    def total_income(self):
+        total = 0
+        #just sum up all the incomes in the dictionary
+        for i in self.income.values(): #it must be the key values not the key itself.
+            total += i
+        return total
+    
+    def total_expenses(self):
+        total = 0
+        for i in self.expenses.values():
+            total += i
+        return total
+
+    def acc_balance(self):
+        #call the methods and calculate the difference
+        return self.total_income()-self.total_expenses()
+
+    def add_income(self, description, amount):
+        self.income[description] = amount
+    
+    def add_expense(self, description, amount):
+        self.expenses[description] = amount #hashmap, description is the key, amount is key value.
+
+
+    def account_info(self):
+        return f'{self.firstname} {self.lastname} has a total income of ${self.total_income()}, total expenses of ${self.total_expenses()}, and an account balance of ${self.acc_balance()}.'
+
+
+# Example usage:
+p = PersonAccount('Lebron', 'James')
+p.add_income('Salary', 50000)
+p.add_income('Bonus', 10000)
+p.add_expense('Rent', 4000)
+p.add_expense('Food', 1000)
+
+print(p.account_info())
