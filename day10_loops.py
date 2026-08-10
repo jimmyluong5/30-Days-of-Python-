@@ -199,6 +199,8 @@ print('The sum of odd numbers is:', sum_odd)
 lst = ['banana', 'orange', 'mango', 'lemon'] 
 
 for i in range(len(lst)-1, -1, -1):
-    print(i)
+    print(lst[i])
+
+    
 
 

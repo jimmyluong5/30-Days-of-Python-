@@ -256,6 +256,7 @@ def evens_and_odds(n):
             even_count+=1
         else:
             odd_count +=1
-    return even_count, odd_count
+    return even_count, odd_count #returns a list
 
 print(evens_and_odds(100))
+
