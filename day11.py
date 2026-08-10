@@ -4,6 +4,7 @@
 #call function 
 
 #example
+
 def function_name():
     print('Hello World')
 
@@ -83,3 +84,78 @@ def is_odd(num):
 
 print(is_odd(3))
 print(is_even(2))
+
+#we can make a function that finds all the even numbers and places them into an array by iterating from 0 to n+1 to include n
+def sort_numbers(num):
+    #first create an empty list
+    even_numbers = []
+    odd_numbers = []
+    for i in range(num+1):
+        #even numbers
+        if i % 2 == 0:
+            even_numbers.append(i) #we are adding the even numbers to the list
+        else:
+            odd_numbers.append(i) #where i is the iterating variable but contains the numbers at that index
+    return even_numbers, odd_numbers
+
+print(sort_numbers(10))
+
+#if we don't know the number of arguments to pass to the function then we can use a pointer?
+def sum_all_num(*n):
+    total = 0 
+    for i in n:
+        total +=i
+    return total
+
+answer = sum_all_num(1,2)
+print(answer) #3
+
+
+#dictionary unpacking which means we can access the key-value pairs in a dictionary
+def greet(name, location):
+
+    #print a greeting
+    print('Hi there', name, 'how is the weather in', location)
+
+#call the function
+#greet(name = 'Lebron', location = 'Canada')
+
+print('\n')
+
+#or create a dictionary with the same parameters
+dict = {'name': 'Lebron', 'location': 'Canada'}
+
+#unpack the dictionary
+greet(**dict)
+
+
+#exercises
+
+def add_two_numbers(a,b):
+    c = a+b
+    return c
+
+
+def area_circle(radius):
+    return 3.14 * radius**2
+
+def add_all_nums(*numbers):
+    sum = 0
+    for i in numbers:
+        sum +=i
+    return sum
+
+def convert_celsius_to_fahrenheit(celsius_temp):
+    farenheit = (celsius_temp* 9/5) + 32
+    return farenheit
+
+def check_season(month):
+    if month in ['September', 'October', 'November']:
+        return 'Autumn'
+    elif month in ['March', 'April', 'May']:
+        return 'Spring'
+    elif month in ['June', 'July', 'August']:
+        return 'Summer'
+    else:
+        return 'Winter'
+print(check_season('September'))
