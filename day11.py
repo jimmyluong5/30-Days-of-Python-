@@ -159,3 +159,103 @@ def check_season(month):
     else:
         return 'Winter'
 print(check_season('September'))
+
+#6 write function that returns the slope of a linear equation
+def calculate_slope(x1,y1, x2, y2):
+    slope = (y2-y1)/(x2-x1)
+    return slope
+
+def quad_eqn(a,b,c):
+    discrim = b**2 - 4*a*c
+
+    if discrim > 0: #real roots
+        x1 = (-b + discrim**0.5)/2*a
+        x2 = (-b - discrim**0.5)/2*a
+        return x1, x2
+    elif discrim == 0:
+        x = -b/2*a
+        return x
+    else:
+        print('No real roots')
+
+
+print(quad_eqn(1,5,6))
+
+def print_list(lst):
+    for i in lst:
+        print(i)
+
+print_list([1,2,3,4])
+
+#reverse list
+def reverse_list(lst):
+    i = 0
+    j = len(lst)-1
+
+    while i < j:
+        #swap the elements
+        lst[i] = lst[j]
+        lst[j] = lst[i]
+        i +=1
+        j -=1
+    return lst
+
+print(reverse_list([1,2,3,4]))
+
+def capitalize_list_items(lst):
+    #just need to capitalize the items, then return the new list
+    #use strings for this
+    for word in lst:
+        word = word.upper()
+    return lst
+
+print(capitalize_list_items(['lebron']))
+
+def add_item(lst, item):
+    lst.append(item)
+    return lst
+
+print(add_item(['lebron'], 'James'))
+
+def remove_item(lst):
+    lst.pop(1)
+    return lst
+
+print(remove_item(['Lebron', 'James']))
+
+def sum_of_numbers(n):
+    sum = 0
+    for i in range(n+1):
+        sum = sum + i
+    return sum
+print(sum_of_numbers(100)) #should be 5050
+
+def sum_of_odds(num):
+    total = 0
+    for i in range(num+1):
+        if i % 2 != 0:
+            total +=i
+    return total
+
+print(sum_of_odds(100)) #should be 2500
+
+def sum_of_evens(num):
+    sum = 0
+    for i in range(num+1):
+        if i%2==0:
+            sum+=i
+    return sum
+print(sum_of_evens(100)) #2550
+
+
+def evens_and_odds(n):
+    odd_count = 0
+    even_count = 0
+    for i in range(n+1):
+        if i %2 == 0:
+            even_count+=1
+        else:
+            odd_count +=1
+    return even_count, odd_count
+
+print(evens_and_odds(100))
