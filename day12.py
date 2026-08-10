@@ -138,7 +138,19 @@ def user_id_gen_by_user():
       #print the user id
       print(user_id) #prints the completed user_id after the desired length
 
-user_id_gen_by_user()
+#user_id_gen_by_user()
+
+#3
+
+def rgb_color_gen():
+    #it will print 3 random numbers from 0 to 255 each
+    #create an array of the numbers
+    rgb = list() #create the empty set of numbers
+    for i in range(3):
+        rgb.append(randint(0,255))
+    print('rgb',rgb) #print rgb 
+
+print(rgb_color_gen())
 
 
                 
