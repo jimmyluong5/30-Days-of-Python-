@@ -35,3 +35,24 @@ print(odd_numbers)
 numbers = [-8, -7, -3, -1, 0, 1, 3, 4, 5, 7, 6, 8, 10]
 positive_even_numbers = [i for i in range(11) if [i>0, i%2==0]]
 print(positive_even_numbers)
+
+#creating lambda functions
+#these are functions without a name, it can take any number of arguments, but can only have one expression.
+
+#syntax
+#x = lambda param1, param2 ...
+#print(x(arg1,arg2,arg3))
+
+#example
+def add_nums(x,y):
+    return x+y
+
+print(add_nums(1,2))
+
+#make it a lambda function
+add_nums = lambda a,b: a+b
+print(add_nums(2,4))
+
+#self invoking the lambda function
+print((lambda a, b: a+b)(2,3))
+
