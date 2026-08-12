@@ -102,15 +102,35 @@ print(result) # 'HTML CSS JavaScript React'
 #exercises
 #Concatenate the string 'Thirty', 'Days', 'Of', 'Python' to a single string, 'Thirty Days Of Python'.
 
-string1 = 'Thirty', 'Days', 'Of', 'Python'
+string1 = ['Thirty', 'Days', 'Of', 'Python']
 string2= ' '.join(string1)
 print(string2)
 
 #Concatenate the string 'Coding', 'For' , 'All' to a single string, 'Coding For All'.
-string1 = 'Coding', 'For', "All"
-#need to remove the spaces first
-string2 = ' '.join(string1)
+string1 = ['Coding', 'For', "All"]
+
+
+#need to remove all the spaces first 
+str1 = 'Lebron James'
+string2 = str1.replace(' ','')
 print(string2)
 
+#to check if the string has non-alphanumerical characters
+str1 = 'Lebron James!!!'
+if str1.isalnum() == True:
+    print('String has no non-alphanumerical characters')
 
+
+#this method strips all spaces, and non-alpha characters
+str1 = 'Lebron@@!#_James !!! Curry'
+str1 = ''.join(i for i in str1 if i.isalnum())
+print(str1)
+
+#convert a string to ascii
+str1 = "{}"
+str1 = [ord(char)for char in str1]
+print(str1)
+
+
+# check if the abs() between the left and right ptrs are within the values of 1 and 2.str1
 

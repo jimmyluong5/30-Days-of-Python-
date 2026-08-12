@@ -54,5 +54,16 @@ add_nums = lambda a,b: a+b
 print(add_nums(2,4))
 
 #self invoking the lambda function
-print((lambda a, b: a+b)(2,3))
+answer=(lambda a, b: a+b)(2,3) #5
+print(answer)
+
+square = lambda x : x ** 2
+print(square(3))    # 9
+cube = lambda x : x ** 3
+print(cube(3))    # 27
+
+# Multiple variables
+multiple_variable = lambda a, b, c: a ** 2 - 3 * b + 4 * c
+print(multiple_variable(5, 5, 3)) # 22
+
 
