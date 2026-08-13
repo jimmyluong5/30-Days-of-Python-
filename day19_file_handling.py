@@ -73,7 +73,146 @@ with open('newfile.txt', 'w') as f: #this creates a new text file in the folder 
     f.write('Lebron James and the 76ers')
     f.write('Steph Curry and the Golden State Warriors')
 
+#deleting files
+import os
+if os.path.exists('gabby_is_a_fn.txt'):
+    os.remove('gabby_is_a_fn.txt')
+    print('file removed')
+else:
+    print('file does not exist')
     
 
+#file types now
+
+#.txt is common, but we should deal with .json now
+
+#.json stands for JavaScript Object Notation
+#it is used to store and transport data. it is human readable
+#it is a stringified JavaScript object or Python directionary
+
+dict = {'Lebron', 'Curry', 'Giannis', 'Lillard'}
+
+#dictionary to string
+person_dict= "{'Lebron', 'Curry', 'Giannis', 'Lillard'}"
+print(person_dict)
+
+#changing JSON to dictionary
+
+#we import the json module
+
+import json #then we use the loads method to convert a string to a dictionary
+
+person_json = '''{
+    "name": "Asabeneh",
+    "country": "Finland",
+    "city": "Helsinki",
+    "skills": ["JavaScript", "React", "Python"]
+}'''
+
+person_dict = json.loads(person_json)
+
+print(person_dict)
+print(person_dict['name'])
+
+import json
+# python dictionary
+person = {
+    "name": "Asabeneh",
+    "country": "Finland",
+    "city": "Helsinki",
+    "skills": ["JavaScript", "React", "Python"]
+}
+# let's convert it to  json
+person_json = json.dumps(person, indent=4) # indent could be 2, 4, 8. It beautifies the json
+print(type(person_json))
+print(person_json)
+
+#we can save our data as a json file
+
+with open('json_example.json', 'w') as f:
+    json.dump(person, f, ensure_ascii = False, indent = 4)
 
 
+#to normally write a json file
+with open('example.json', 'w') as f:
+    json.dump(person, f, ensure_ascii = False, indent = 4) 
+
+#can remove example.json by doing os.remove('example.json')
+
+#person is the python object, so if i used something else it would be
+#name_json and it would be name instead of person
+
+#f is the open, writable file object created by with open('blahblah.json') as f:
+#json.dump() writes directly to the file
+
+#ensure ascii == False is to allow us to write non ascii characters, such as emojis or accents
+#indent = 4 just indents the text by 4 spaces of indentation.__debug__
+
+
+
+#files with csv extension
+import csv
+
+#to create a .csv file
+with open('test.csv', 'w') as f:
+    csv_writer = csv.writer(f, delimiter=',')
+    csv_writer.writerow(['name', 'city', 'weight'])
+    csv_writer.writerow(['jimmy', 'nyc', 175])
+
+#to read a .csv file
+with open('test.csv', 'r') as f:
+    csv_reader = csv.reader(f, delimiter=',')
+    for row in csv_reader:
+        print(row)
+
+
+#files with xlsx extension
+
+
+import openpyxl #its an l.
+
+#create a workbook and select active sheet
+workbook = openpyxl.Workbook()
+worksheet = workbook.active
+worksheet.title = "SampleSheet"
+
+#add data
+worksheet.append(['Name', 'age'])
+worksheet.append(['Jimmy', 20])
+worksheet.append(['Lebron', 42])
+
+workbook.save('sample.xlsx')
+
+#files with xml extension
+
+import xml.etree.ElementTree as ET 
+
+#to create an .xml file using Python code:
+root = ET.Element('person', attrib={'gender': 'female'})
+name = ET.SubElement(root, 'name')
+name.text = 'Asabeneh'
+country = ET.SubElement(root, 'country')
+country.text = 'Finland'
+city = ET.SubElement(root, 'city')
+city.text = 'Helsinki'
+skills = ET.SubElement(root, 'skills')
+skill1 = ET.SubElement(skills, 'skill')
+skill1.text = 'JavaScript'
+skill2 = ET.SubElement(skills, 'skill')
+skill2.text = 'React'
+skill3 = ET.SubElement(skills, 'skill')
+skill3.text = 'Python'
+
+tree = ET.ElementTree(root)
+tree.write('xml.example.xml', encoding='utf-8', xml_declaration=True)
+
+#to read/parse an .xml file:
+tree = ET.parse('xml.example.xml')
+root = tree.getroot()
+print('Root tag:', root.tag)
+print('Attribute:', root.attrib)
+for child in root:
+    print('field: ', child.tag)
+
+
+    
