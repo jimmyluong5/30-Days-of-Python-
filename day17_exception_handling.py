@@ -44,7 +44,7 @@ except:
     age = 2019 - year_born
     print(f'You are {name}. And your age is {age}.')
 except:
-    print('Something went wrong') """
+    print('Someadthing went wrong') """
 
 
 #we can try and determine the problem using excepts
@@ -52,7 +52,7 @@ except:
 try:
     name = input('Enter your name:')
     year_born = input('Year you born:')
-    age = 2019 - int(year_born)
+    age = 2026 - int(year_born)
     print(f'You are {name}. And your age is {age}.')
 except TypeError:
     print('Type error occur')
@@ -64,6 +64,9 @@ else:
     print('I usually run with the try block')
 finally:
     print('I always run.')
+
+#the rest is useless
+
 
 
 
