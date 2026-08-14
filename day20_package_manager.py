@@ -103,11 +103,28 @@ import sys
 import requests
 sys.stdout.reconfigure(encoding='utf-8')
 
+#create a .gitignore file, then put .env in it
+#create a .env file and put the api key in there (e.g.) (countries_api = rc_live_06829e1750294ca6b2e09b5c06872868)
+#then call it here.
+
+
+#to access the API key 
+import os
+from dotenv import load_dotenv
+
+#load the variables from the .env file into the environment
+load_dotenv()
+
+#fetch the key using os.getenv()
+api_key = os.getenv('REST_COUNTRIES_API_KEY')
+#then use it in the API headers
+
+
 #1 endpoint and authorization
 url = 'https://api.restcountries.com/countries/v5?q=japan'
 
 #api key which allows us access to the api
-headers = {'Authorization': 'Bearer rc_live_06829e1750294ca6b2e09b5c06872868'} 
+headers = {'Authorization': f'Bearer {api_key}'} 
 
 #2 make the GET request
 response = requests.get(url, headers = headers)
@@ -180,11 +197,65 @@ E-Commerce: Send shopping cart items to Stripe API to handle credit card payment
 someone could take it and run up your bills. Better use environment variables 
 to store the API keys. """
 
+#exercise
+#Read this url and find the 10 most frequent words. romeo_and_juliet = 'http://www.gutenberg.org/files/1112/1112.txt'
+
+url = 'https://raw.githubusercontent.com/Asabeneh/30-Days-Of-Python/master/data/romeo_and_juliet.txt'
+response = requests.get(url)
+print(response.status_code)
+
+if response.status_code == 200:
+
+    text = response.text #in the form of a string
+    text = text.lower()
+
+    #to remove the puncuation, we can use the string module 
+    import string
+
+    for char in string.punctuation:
+        text = text.replace(char, '')
+
+    #we can convert long string into a list of words, using text.split() which splits the string at every whitespace
+
+    words = text.split()
+    
+    #then create a hashmap to count the frequency of words
+    hashmap = {}
+
+    #then we loop through the list of words and count the frequency of words in the hashmap
+    #first we loop through the entire list of words
+    for word in words:
+
+        #if the word is in the hashmap we increase the frequency by 1
+        if word in hashmap:
+            hashmap[word] +=1
+        else:
+            #we add it to the hashmap
+            hashmap[word] = 1
+    
+    #here we have a hashmap filled with the frequency of words.
+
+    #then we have to sort the words based on frequency using the sort function
+
+    # to sort the words based on frequency using the sorted() function:
+    # - hashmap.items() converts dict to a list of (word, count) tuples
+    # - key=lambda x: x[1] sorts by the frequency count
+    # - reverse=True sorts from highest frequency to lowest
+    sorted_words = sorted(hashmap.items(), key=lambda x: x[1], reverse=True)
+    
+    print("\n--- Top 10 Most Frequent Words (Using sorted + lambda) ---")
+    print(sorted_words[:10])
+
+    # Or we can use the Counter class from the collections module
+    from collections import Counter
+    word_counts = Counter(words)
+    print("\n--- Top 10 Most Frequent Words (Using Counter) ---")
+    print(word_counts.most_common(10))
 
 
 
 
-
+   
 
 
 
