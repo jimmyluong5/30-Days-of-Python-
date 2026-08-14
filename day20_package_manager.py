@@ -197,9 +197,8 @@ E-Commerce: Send shopping cart items to Stripe API to handle credit card payment
 someone could take it and run up your bills. Better use environment variables 
 to store the API keys. """
 
-#exercise
+""" #exercise
 #Read this url and find the 10 most frequent words. romeo_and_juliet = 'http://www.gutenberg.org/files/1112/1112.txt'
-
 url = 'https://raw.githubusercontent.com/Asabeneh/30-Days-Of-Python/master/data/romeo_and_juliet.txt'
 response = requests.get(url)
 print(response.status_code)
@@ -250,16 +249,63 @@ if response.status_code == 200:
     from collections import Counter
     word_counts = Counter(words)
     print("\n--- Top 10 Most Frequent Words (Using Counter) ---")
-    print(word_counts.most_common(10))
-
-
-
-
-   
+    print(word_counts.most_common(10)) """
 
 
 
 
 
 
+#exercise 2
 
+""" Read the cats API and cats_api = 'https://api.thecatapi.com/v1/breeds' and find :
+the min, max, mean, median, standard deviation of cats' weight in metric units.
+the min, max, mean, median, standard deviation of cats' lifespan in years.
+Create a frequency table of country and breed of cats """   
+
+url = 'https://api.thecatapi.com/v1/breeds'
+response =requests.get(url)
+
+if response.status_code == 200:
+    #then we get the data in the form of .json
+    data = response.json()
+    
+    weights = []
+
+    #in order to find what the structure looks like, we can print the first item
+    #print(data[0])
+    #we found out that the first index is an array of data.
+    #weight is in the first column so ['weight']['metric'] to access the weight values
+
+    #then if we want to access lifespans we can use ['life_span'] to get the lifespans.
+
+    print(data[0]['weight']['metric']) #prints 3-5 kg
+    print(data[0]['life_span']) #prints 11-15
+    #or the keys of the data
+    #print(data[0].keys())
+
+    # Calculate min, max, mean, median, standard deviation of cat's weight in metric units
+    import statistics
+    
+    weights = []
+
+    for breed in data:
+        weight_data = breed['weight']['metric']  # e.g., "3 - 5"
+        weights_split = weight_data.split('-')
+        
+        for item in weights_split:
+            weights.append(float(item))
+    
+    # Calculate statistics
+    min_weight = min(weights)
+    max_weight = max(weights)
+    mean_weight = sum(weights) / len(weights)
+    median_weight = statistics.median(weights)
+    stdev_weight = statistics.stdev(weights)
+
+    print("\n--- CAT WEIGHT (kg) STATS ---")
+    print("Min Weight:", min_weight)
+    print("Max Weight:", max_weight)
+    print("Mean Weight:", f"{mean_weight:.2f}")
+    print("Median Weight:", median_weight)
+    print("Std Dev Weight:", f"{stdev_weight:.2f}")    
