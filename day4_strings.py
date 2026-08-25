@@ -134,3 +134,10 @@ print(str1)
 
 # check if the abs() between the left and right ptrs are within the values of 1 and 2.str1
 
+
+str1 = "Lebron James"
+str2 = "Curry"
+str3 = "Durant"
+str3 = str2.replace('Lebron', 'Curry').replace('Curry', 'Durant')
+print(str3)
+
