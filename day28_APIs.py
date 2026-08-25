@@ -10,4 +10,20 @@
 
 
 #how it works
-#has a set of rules for how to ask for information 
+#has a set of rules for how to ask for information (using HTTP requests)
+#http - hypertext transfer protocol
+
+#and how the information is sent back in the form of formats such as (JSON or XML)
+
+#the modern style use a style called REST or RESTful, which makes sharing web resources much 
+#direct and straightforward
+
+#for example a developer can use Twitter's REST API to pull core data, or use its Search API 
+#to look up specific trends and search results
+
+#REST stands for Representational State Transfer (API)
+
+#basically APIs are the middlemen of sending and receiving data, or like a waiter
+#where you the user ask for something and tell the waiter(ask for info), then the waiter tells the cook (send data)
+
+
